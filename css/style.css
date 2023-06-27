@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*npx tailwindcss -i ./css/style.css -o ./css/output.css --watch*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+#name {
+  font-family: "Shantell sans";
+}
+
+.containerIcons {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 32px;
+  row-gap: 16px;
+  place-content: center;
+  justify-content: space-evenly;
+}
+
+.boxIconSkill {
+  display: flex;
+  max-width: 80px;
+  min-width: 25px;
+  width: 10%;
+  align-items: center;
+}
+
+.iconSkill {
+  width: 100%;
+  height: fit-content;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+}
+
+/*Experiences*/
+.boxExperience {
+  display: flex;
+  padding: 10px;
+}
+.textExperience {
+  text-align: center;
+  flex-basis: 60%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.imageExperience {
+  flex-basis: 40%;
+  display: flex;
+  justify-content: center;
+}
+.titleExperience {
+  font-size: 24px;
+}
+.subtitleExperience {
+  margin-bottom: 10px;
+}
+
+/*Projects*/
+.containerProjects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 500px));
+  gap: 30px;
+  justify-content: space-evenly;
+}
+.boxProject {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+.titleProject {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.imageProject {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 285px;
+  z-index: 1;
+}
+.imageProject img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.imageProject:hover .hoverImage {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+.hoverImage {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  justify-content: space-evenly;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: scale(0);
+  pointer-events: none;
+}
+.textProject {
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 1100px) {
+  /*Experience*/
+  .boxExperience {
+    flex-direction: column;
+    padding: 0px;
+  }
+  .textExperience {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  /*Project*/
+  .boxProject {
+    padding: 0px;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 540px) {
+  /*Project*/
+  .imageProject {
+    height: 240px;
+  }
+}

@@ -7,8 +7,6 @@ window.onload = () => {
   const buttonLight = document.querySelector("#buttonLightTheme");
   const buttonMenu = document.querySelector("#buttonMenu");
   const navMenu = document.querySelector("#navMenu");
-  // Cargamos el modo oscuro como predeterminado
-  document.documentElement.classList.add("dark");
   buttonLight.style.display = "block";
   let inicio = document.querySelector("#start");
 

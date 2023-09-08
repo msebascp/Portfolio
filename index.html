@@ -1,270 +1,482 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./media/icons/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./media/icons/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./media/icons/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./media/icons/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="./css/output.css" />
+    <script
+      src="https://kit.fontawesome.com/f78e4f8e66.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Shantell+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Portafolio</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./media/icons/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./media/icons/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./media/icons/favicon/favicon-16x16.png">
-  <link rel="manifest" href="./media/icons/favicon/site.webmanifest">
-  <link rel="stylesheet" href="./css/output.css" />
-  <script src="https://kit.fontawesome.com/f78e4f8e66.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Shantell+Sans:wght@300&display=swap"
-    rel="stylesheet" />
-  <title>Portafolio</title>
-</head>
-
-<body class="dark:text-white text-black">
-  <header class="fixed w-full text-lg bg-stone-400 dark:bg-gray-950 z-10">
-    <nav class="flex w-full h-[45px] md:h-[60px] relative">
-      <div class="flex items-center ml-4">
-        <h2 id="name">{Manuel Sebastián}</h2>
-      </div>
-      <button id="buttonMenu" name="buttonMenu" class="md:hidden ml-auto mr-4">
-        <i class="fa-solid fa-bars dark:text-white"></i>
-      </button>
-      <ul id="navMenu"
-        class="border-[6px] border-stone-400 dark:border-gray-950 border-solid hidden absolute top-[45px] bg-stone-400 dark:bg-gray-950 w-full text-center md:dark:bg-transparent md:bg-transparent md:p-4 md:relative md:w-auto md:top-auto md:flex md:gap-10 md:ml-auto md:border-[0px] md:border- dark:md:border-[0px]">
-        <li class="py-2 md:p-0">
-          <a href="#start" class="navItem hover:underline" data-url="start">Inicio</a>
-        </li>
-        <li class="py-2 md:p-0">
-          <a href="#skills" class="navItem hover:underline" data-url="skills">Habilidades</a>
-        </li>
-        <li class="py-2 md:p-0">
-          <a href="#experience" class="navItem hover:underline" data-url="experience">Experiencia</a>
-        </li>
-        <li class="py-2 md:p-0">
-          <a href="#projects" class="navItem hover:underline" data-url="projects">Proyectos</a>
-        </li>
-        <li class="flex justify-center py-2 md:p-0">
-          <button name="buttonTheme" id="buttonDarkTheme" class="hidden">
-            <img src="./media/icons/moon.png" width="20px" height="20px" alt="imageNotFound" />
-          </button>
-          <button name="buttonTheme" id="buttonLightTheme" class="hidden">
-            <img src="./media/icons/sun.ico" width="20px" height="20px" alt="imageNotFound" />
-          </button>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <!--START-->
-    <div id="start" class="section bg-slate-600 h-[100vh] items-center text-lg px-4 sm:px-0"
-      style="background-image: url('./media/bg.svg');">
-      <div class="flex flex-wrap w-full items-center md:flex-nowrap sm:w-[90%]">
-        <div id="presentation" class="w-full order-2 md:w-[40%]">
-          <h1 class="mb-8">Hola, me llamo Manuel Sebastián y soy técnico superior en desarrollo de
-            aplicaciones web</h1>
-          <div class="flex items-center gap-4 h-[35px]">
-            <a href="./media/cv.pdf" aria-label="linkCV" target="_blank"
-              class="py-1 px-4 dark:bg-blue-500 bg-orange-500 rounded-lg font-bold h-full">
-              CURRÍCULUM
-            </a>
-            <a href="https://github.com/msebascp" aria-label="linkGithub" target="_blank"
-              class="flex items-center text-[2em]">
-              <i class="fa-brands fa-square-github dark:hover:text-blue-500 hover:text-orange-500"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/manuel-sebasti%C3%A1n-c-177097269/" aria-label="linkLinkedin"
-              target="_blank" class="flex items-center text-[2em]">
-              <i class="fa-brands fa-linkedin dark:hover:text-blue-500 hover:text-orange-500"></i>
-            </a>
-          </div>
+  <body class="dark:text-white text-black">
+    <header class="fixed w-full text-lg bg-stone-400 dark:bg-gray-950 z-10">
+      <nav class="flex w-full h-[45px] md:h-[60px] relative">
+        <div class="flex items-center ml-4">
+          <h2 id="name">{Manuel Sebastián}</h2>
         </div>
-        <div id="photo" class="w-full order-1 md:w-[60%]">
-          <img src="./media/icons/programmer_v_02.png" alt="startImage" />
-        </div>
-      </div>
-    </div>
-    <!--SKILLS-->
-    <div id="skills" class="section bg-stone-200 dark:bg-gray-800 px-4 sm:px-0">
-      <div class="w-full pb-10 pt-16 sm:w-[90%]">
-        <h1 class="text-center mb-10 text-5xl">Habilidades</h1>
-        <h2 class="text-center text-3xl my-4">
-          Leguajes de programación y maquetación web
-        </h2>
-        <div class="containerIcons">
-          <div class="boxIconSkill">
-            <img src="./media/icons/html.png" alt="" class="iconSkill" title="html" />
+        <button
+          id="buttonMenu"
+          name="buttonMenu"
+          class="md:hidden ml-auto mr-4"
+        >
+          <i class="fa-solid fa-bars dark:text-white"></i>
+        </button>
+        <ul
+          id="navMenu"
+          class="border-[6px] border-stone-400 dark:border-gray-950 border-solid hidden absolute top-[45px] bg-stone-400 dark:bg-gray-950 w-full text-center md:dark:bg-transparent md:bg-transparent md:p-4 md:relative md:w-auto md:top-auto md:flex md:gap-10 md:ml-auto md:border-[0px] md:border- dark:md:border-[0px]"
+        >
+          <li class="py-2 md:p-0">
+            <a href="#start" class="navItem hover:underline" data-url="start"
+              >Inicio</a
+            >
+          </li>
+          <li class="py-2 md:p-0">
+            <a href="#skills" class="navItem hover:underline" data-url="skills"
+              >Habilidades</a
+            >
+          </li>
+          <li class="py-2 md:p-0">
+            <a
+              href="#experience"
+              class="navItem hover:underline"
+              data-url="experience"
+              >Experiencia</a
+            >
+          </li>
+          <li class="py-2 md:p-0">
+            <a
+              href="#projects"
+              class="navItem hover:underline"
+              data-url="projects"
+              >Proyectos</a
+            >
+          </li>
+          <li class="flex justify-center py-2 md:p-0">
+            <button name="buttonTheme" id="buttonDarkTheme" class="hidden">
+              <img
+                src="./media/icons/moon.png"
+                width="20px"
+                height="20px"
+                alt="imageNotFound"
+              />
+            </button>
+            <button name="buttonTheme" id="buttonLightTheme" class="hidden">
+              <img
+                src="./media/icons/sun.ico"
+                width="20px"
+                height="20px"
+                alt="imageNotFound"
+              />
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!--START-->
+      <div
+        id="start"
+        class="section bg-slate-600 h-[100vh] items-center text-lg px-4 sm:px-0"
+        style="background-image: url('./media/bg.svg')"
+      >
+        <div
+          class="flex flex-wrap w-full items-center md:flex-nowrap sm:w-[90%]"
+        >
+          <div id="presentation" class="w-full order-2 md:w-[40%]">
+            <h1 class="mb-8">
+              Hola, me llamo Manuel Sebastián y soy técnico superior en
+              desarrollo de aplicaciones web
+            </h1>
+            <div class="flex items-center gap-4 h-[35px]">
+              <a
+                href="./media/cv.pdf"
+                aria-label="linkCV"
+                target="_blank"
+                class="py-1 px-4 dark:bg-blue-500 bg-orange-500 rounded-lg font-bold h-full"
+              >
+                CURRÍCULUM
+              </a>
+              <a
+                href="https://github.com/msebascp"
+                aria-label="linkGithub"
+                target="_blank"
+                class="flex items-center text-[2em]"
+              >
+                <i
+                  class="fa-brands fa-square-github dark:hover:text-blue-500 hover:text-orange-500"
+                ></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/manuel-sebasti%C3%A1n-c-177097269/"
+                aria-label="linkLinkedin"
+                target="_blank"
+                class="flex items-center text-[2em]"
+              >
+                <i
+                  class="fa-brands fa-linkedin dark:hover:text-blue-500 hover:text-orange-500"
+                ></i>
+              </a>
+            </div>
           </div>
-          <div class="boxIconSkill">
-            <img src="./media/icons/css.png" alt="" class="iconSkill" title="css" />
-          </div>
-          <div class="boxIconSkill">
-            <img src="./media/icons/js.png" alt="" class="iconSkill" title="javascript" />
-          </div>
-          <div class="boxIconSkill">
-            <img src="./media/icons/ts.png" alt="" class="iconSkill" title="typescript" />
-          </div>
-          <div class="boxIconSkill">
-            <img src="./media/icons/node.png" alt="" class="iconSkill" title="nodejs" />
-          </div>
-          <div class="boxIconSkill">
-            <img src="./media/icons/php.png" alt="" class="iconSkill" title="php" />
-          </div>
-        </div>
-        <h2 class="text-center text-3xl my-4">Frameworks y librerías</h2>
-        <div class="containerIcons">
-          <div class="boxIconSkill">
-            <img src="./media/icons/bootstrap.png" alt="" class="iconSkill" title="bootstrap" />
-          </div>
-          <div class="boxIconSkill">
-            <img src="./media/icons/tailwind.png" alt="" class="iconSkill" title="tailwind" />
-          </div>
-          <div class="boxIconSkill">
-            <img src="./media/icons/angular.png" alt="" class="iconSkill" title="angular" />
-          </div>
-          <div class="boxIconSkill">
-            <img src="./media/icons/laravel.png" alt="" class="iconSkill" title="laravel" />
-          </div>
-          <div class="boxIconSkill">
-            <img src="./media/icons/adonis.png" alt="" class="iconSkill" title="adonisjs" />
-          </div>
-        </div>
-        <h2 class="text-center text-3xl my-4">Herramientas adicionales</h2>
-        <div class="containerIcons">
-          <div class="boxIconSkill">
-            <img src="./media/icons/mysql.png" alt="" class="iconSkill" title="mysql" />
-          </div>
-          <div class="boxIconSkill">
-            <img src="./media/icons/git.png" alt="" class="iconSkill" title="git" />
-          </div>
-          <div class="boxIconSkill">
-            <img src="./media/icons/trello.png" alt="" class="iconSkill" title="trello" />
-          </div>
-          <div class="boxIconSkill">
-            <img src="./media/icons/postman.png" alt="" class="iconSkill" title="postman" />
+          <div id="photo" class="w-full order-1 md:w-[60%]">
+            <img src="./media/icons/programmer_v_02.png" alt="startImage" />
           </div>
         </div>
       </div>
-    </div>
-    <!--EXPERIENCE-->
-    <div id="experience" class="section bg-stone-300 dark:bg-gray-900 px-4 sm:px-0">
-      <div class="w-full pb-10 pt-16 sm:w-[90%]">
-        <h1 class="text-center mb-10 text-5xl">Experiencia</h1>
-        <div class="boxExperience">
-          <div class="imageExperience">
-            <img src="./media/escudoSantoDomingo.jpg" alt="ImageSantoDomingo">
+      <!--SKILLS-->
+      <div
+        id="skills"
+        class="section bg-stone-200 dark:bg-gray-800 px-4 sm:px-0"
+      >
+        <div class="w-full pb-10 pt-16 sm:w-[90%]">
+          <h1 class="text-center mb-10 text-5xl">Habilidades</h1>
+          <h2 class="text-center text-3xl my-4">
+            Leguajes de programación y maquetación web
+          </h2>
+          <div class="containerIcons">
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/html.png"
+                alt=""
+                class="iconSkill"
+                title="html"
+              />
+            </div>
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/css.png"
+                alt=""
+                class="iconSkill"
+                title="css"
+              />
+            </div>
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/js.png"
+                alt=""
+                class="iconSkill"
+                title="javascript"
+              />
+            </div>
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/ts.png"
+                alt=""
+                class="iconSkill"
+                title="typescript"
+              />
+            </div>
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/node.png"
+                alt=""
+                class="iconSkill"
+                title="nodejs"
+              />
+            </div>
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/php.png"
+                alt=""
+                class="iconSkill"
+                title="php"
+              />
+            </div>
           </div>
-          <div class="textExperience">
-            <h1 class="titleExperience">Colegio diocésano Santo Domingo</h1>
-            <h2 class="subtitleExperience">Marzo 2023 - Junio 2023, Orihuela-Alicante (España)</h2>
-            <p class="descriptionExperience">
-              Durante mi periodo de prácticas en el departamento de
-              informática, trabajé en el desarrollo de una aplicación web interna. Esta aplicación tenía
-              como objetivo principal gestionar las ubicaciones del
-              centro en un mapa interactivo, proporcionando información sobre el nombre del aula y los
-              servicios asociados, como cámaras de seguridad, cerraduras...<br>
-              <br>
-              Para llevar a cabo este proyecto, utilicé el framework AdonisJS tanto para el frontend como
-              para el backend de la
-              aplicación. Además, la base de datos se implementó utilizando MySQL.
-            </p>
+          <h2 class="text-center text-3xl my-4">Frameworks y librerías</h2>
+          <div class="containerIcons">
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/bootstrap.png"
+                alt=""
+                class="iconSkill"
+                title="bootstrap"
+              />
+            </div>
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/tailwind.png"
+                alt=""
+                class="iconSkill"
+                title="tailwind"
+              />
+            </div>
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/angular.png"
+                alt=""
+                class="iconSkill"
+                title="angular"
+              />
+            </div>
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/laravel.png"
+                alt=""
+                class="iconSkill"
+                title="laravel"
+              />
+            </div>
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/adonis.png"
+                alt=""
+                class="iconSkill"
+                title="adonisjs"
+              />
+            </div>
+          </div>
+          <h2 class="text-center text-3xl my-4">Herramientas adicionales</h2>
+          <div class="containerIcons">
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/mysql.png"
+                alt=""
+                class="iconSkill"
+                title="mysql"
+              />
+            </div>
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/git.png"
+                alt=""
+                class="iconSkill"
+                title="git"
+              />
+            </div>
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/trello.png"
+                alt=""
+                class="iconSkill"
+                title="trello"
+              />
+            </div>
+            <div class="boxIconSkill">
+              <img
+                src="./media/icons/postman.png"
+                alt=""
+                class="iconSkill"
+                title="postman"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!--PROJECTS-->
-    <div id="projects" class="section bg-stone-200 dark:bg-gray-800 px-4 sm:px-0">
-      <div class="w-full pb-10 pt-16 sm:w-[90%]">
-        <h1 class="text-center mb-10 text-5xl">Proyectos</h1>
-        <div class="containerProjects">
-          <div class="boxProject bg-stone-300 dark:bg-slate-900">
-            <h1 class="titleProject">Gimnasio web</h1>
-            <div class="imageProject">
-              <img class="object-center" src="./media/olimpo.png" alt="imageOlimpoWeb">
-              <div class="hoverImage bg-white/50 dark:bg-black/50">
-                <div>
-                  <p>Fronted</p>
-                  <a href="https://github.com/msebascp/OLIMPO-ANGULAR" aria-label="linkGithub" target="_blank"
-                    class="flex items-center text-[2em] w-full place-content-center">
-                    <i class="fa-brands fa-square-github hover:text-[#5EBFDD] dark:hover:text-[#5EBFDD]"></i>
+      <!--EXPERIENCE-->
+      <div
+        id="experience"
+        class="section bg-stone-300 dark:bg-gray-900 px-4 sm:px-0"
+      >
+        <div class="w-full pb-10 pt-16 sm:w-[90%]">
+          <h1 class="text-center mb-10 text-5xl">Experiencia</h1>
+          <div class="boxExperience">
+            <div class="imageExperience">
+              <img
+                src="./media/escudoSantoDomingo.jpg"
+                alt="ImageSantoDomingo"
+              />
+            </div>
+            <div class="textExperience">
+              <h1 class="titleExperience">Colegio diocésano Santo Domingo</h1>
+              <h2 class="subtitleExperience">
+                Marzo 2023 - Junio 2023, Orihuela-Alicante (España)
+              </h2>
+              <p class="descriptionExperience">
+                Durante mi periodo de prácticas en el departamento de
+                informática, trabajé en el desarrollo de una aplicación web
+                interna. Esta aplicación tenía como objetivo principal gestionar
+                las ubicaciones del centro en un mapa interactivo,
+                proporcionando información sobre el nombre del aula y los
+                servicios asociados, como cámaras de seguridad, cerraduras...<br />
+                <br />
+                Para llevar a cabo este proyecto, utilicé el framework AdonisJS
+                tanto para el frontend como para el backend de la aplicación.
+                Además, la base de datos se implementó utilizando MySQL.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--PROJECTS-->
+      <div
+        id="projects"
+        class="section bg-stone-200 dark:bg-gray-800 px-4 sm:px-0"
+      >
+        <div class="w-full pb-10 pt-16 sm:w-[90%]">
+          <h1 class="text-center mb-10 text-5xl">Proyectos</h1>
+          <div class="containerProjects">
+            <div class="boxProject bg-stone-300 dark:bg-slate-900">
+              <h1 class="titleProject">Gimnasio web</h1>
+              <div class="imageProject">
+                <img
+                  class="object-center"
+                  src="./media/olimpo.png"
+                  alt="imageOlimpoWeb"
+                />
+                <div class="hoverImage bg-white/50 dark:bg-black/50">
+                  <div>
+                    <p>Fronted</p>
+                    <a
+                      href="https://github.com/msebascp/OLIMPO-ANGULAR"
+                      aria-label="linkGithub"
+                      target="_blank"
+                      class="flex items-center text-[2em] w-full place-content-center"
+                    >
+                      <i
+                        class="fa-brands fa-square-github hover:text-[#5EBFDD] dark:hover:text-[#5EBFDD]"
+                      ></i>
+                    </a>
+                  </div>
+                  <div>
+                    <p>Backend</p>
+                    <a
+                      href="https://github.com/msebascp/OLIMPO_LARAVEL"
+                      aria-label="linkGithub"
+                      target="_blank"
+                      class="flex items-center text-[2em] w-full place-content-center"
+                    >
+                      <i
+                        class="fa-brands fa-square-github hover:text-[#5EBFDD] dark:hover:text-[#5EBFDD]"
+                      ></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="textProject">
+                <p class="descriptionProject">
+                  Trabajo final para el grado de DAW que realicé junto con mi
+                  grupo, consiste en una página web para la gestión de un
+                  gimnasio. <br />
+                  <br />
+                  Para el fronted se usó Angular, para el backend Laravel, para
+                  la base de datos MySQL y para el diseño CSS y Tailwind.
+                </p>
+              </div>
+            </div>
+            <div class="boxProject bg-stone-300 dark:bg-slate-900">
+              <h1 class="titleProject">Tasks C++</h1>
+              <div class="imageProject">
+                <img
+                  class="object-left"
+                  src="./media/tasks.png"
+                  alt="imageTasksC++"
+                />
+                <div class="hoverImage bg-white/50 dark:bg-black/50">
+                  <a
+                    href="https://github.com/msebascp/TASKS_CC"
+                    aria-label="linkGithub"
+                    target="_blank"
+                    class="flex items-center text-[2em] w-full place-content-center"
+                  >
+                    <i
+                      class="fa-brands fa-square-github hover:text-[#5EBFDD] dark:hover:text-[#5EBFDD]"
+                    ></i>
                   </a>
                 </div>
-                <div>
-                  <p>Backend</p>
-                  <a href="https://github.com/msebascp/OLIMPO_LARAVEL" aria-label="linkGithub" target="_blank"
-                    class="flex items-center text-[2em] w-full place-content-center">
-                    <i class="fa-brands fa-square-github hover:text-[#5EBFDD] dark:hover:text-[#5EBFDD]"></i>
+              </div>
+              <div class="textProject">
+                <p class="descriptionProject">
+                  Práctica de gestión de proyectos y tareas en terminal con la
+                  que aprendí lo básico de C++ y POO
+                </p>
+              </div>
+            </div>
+            <div class="boxProject bg-stone-300 dark:bg-slate-900">
+              <h1 class="titleProject">Tasks y login React</h1>
+              <div class="imageProject">
+                <img
+                  class="object-center"
+                  src="./media/tasksReact.png"
+                  alt="imageTasksC++"
+                />
+                <div class="hoverImage bg-white/50 dark:bg-black/50">
+                  <a
+                    href="https://github.com/msebascp/Tasks_and_Authentication_REACT"
+                    aria-label="linkGithub"
+                    target="_blank"
+                    class="flex items-center text-[2em] w-full place-content-center"
+                  >
+                    <i
+                      class="fa-brands fa-square-github hover:text-[#5EBFDD] dark:hover:text-[#5EBFDD]"
+                    ></i>
                   </a>
                 </div>
               </div>
-            </div>
-            <div class="textProject">
-              <p class="descriptionProject">
-                Trabajo final para el grado de DAW que realicé junto con mi grupo, consiste en una página web para la
-                gestión de un gimnasio. <br>
-                <br>
-                Para el fronted se usó Angular, para el backend Laravel, para la base de datos MySQL y para el diseño
-                CSS y Tailwind.
-              </p>
-            </div>
-          </div>
-          <div class="boxProject bg-stone-300 dark:bg-slate-900">
-            <h1 class="titleProject">Tasks C++</h1>
-            <div class="imageProject">
-              <img class="object-left" src="./media/tasks.png" alt="imageTasksC++">
-              <div class="hoverImage bg-white/50 dark:bg-black/50">
-                <a href="https://github.com/msebascp/TASKS_CC" aria-label="linkGithub" target="_blank"
-                  class="flex items-center text-[2em] w-full place-content-center">
-                  <i class="fa-brands fa-square-github hover:text-[#5EBFDD] dark:hover:text-[#5EBFDD]"></i>
-                </a>
+              <div class="textProject">
+                <p class="descriptionProject">
+                  Práctica de gestión de tareas con autenticación. Fronted con
+                  Vite y React, backend con nodejs y Express, y MongoDB para la
+                  base de datos.
+                </p>
               </div>
-            </div>
-            <div class="textProject">
-              <p class="descriptionProject">
-                Práctica de gestión de proyectos y tareas en terminal con la que aprendí lo básico de C++ y POO
-              </p>
-            </div>
-          </div>
-          <div class="boxProject bg-stone-300 dark:bg-slate-900">
-            <h1 class="titleProject">Tasks y login React</h1>
-            <div class="imageProject">
-              <img class="object-center" src="./media/tasksReact.png" alt="imageTasksC++">
-              <div class="hoverImage bg-white/50 dark:bg-black/50">
-                <a href="https://github.com/msebascp/Tasks_and_Authentication_REACT" aria-label="linkGithub"
-                  target="_blank" class="flex items-center text-[2em] w-full place-content-center">
-                  <i class="fa-brands fa-square-github hover:text-[#5EBFDD] dark:hover:text-[#5EBFDD]"></i>
-                </a>
-              </div>
-            </div>
-            <div class="textProject">
-              <p class="descriptionProject">
-                Práctica de gestión de tareas con autenticación. Fronted con Vite y React, backend con nodejs y
-                Express, y MongoDB para la base de datos.
-              </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </main>
-  <footer>
-    <div class="flex justify-center bg-stone-300 dark:bg-gray-900">
-      <div class="w-3/4 py-6">
-        <div class="w-full flex justify-center gap-6">
-          <a href="https://github.com/msebascp" aria-label="linkGithub" target="_blank">
-            <i
-              class="fa-brands fa-square-github text-black dark:text-white text-3xl dark:hover:text-blue-500 hover:text-orange-500"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/manuel-sebasti%C3%A1n-c-177097269/" aria-label="linkLinkedin"
-            target="_blank">
-            <i
-              class="fa-brands fa-linkedin text-black dark:text-white text-3xl dark:hover:text-blue-500 hover:text-orange-500"></i>
-          </a>
+    </main>
+    <footer>
+      <div class="flex justify-center bg-stone-300 dark:bg-gray-900">
+        <div class="w-3/4 py-6">
+          <div class="w-full flex justify-center gap-6">
+            <a
+              href="https://github.com/msebascp"
+              aria-label="linkGithub"
+              target="_blank"
+            >
+              <i
+                class="fa-brands fa-square-github text-black dark:text-white text-3xl dark:hover:text-blue-500 hover:text-orange-500"
+              ></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/manuel-sebasti%C3%A1n-c-177097269/"
+              aria-label="linkLinkedin"
+              target="_blank"
+            >
+              <i
+                class="fa-brands fa-linkedin text-black dark:text-white text-3xl dark:hover:text-blue-500 hover:text-orange-500"
+              ></i>
+            </a>
+          </div>
+          <p class="text-center">
+            <a
+              href="mailto:msebascp@gmail.com"
+              aria-label="linkEmail"
+              class="text-lg"
+              >msebascp@gmail.com</a
+            >
+          </p>
         </div>
-        <p class="text-center">
-          <a href="mailto:msebascp@gmail.com" aria-label="linkEmail" class="text-lg">msebascp@gmail.com</a>
-        </p>
       </div>
-    </div>
-  </footer>
-  <script src="./js/script.js"></script>
-</body>
-
+    </footer>
+    <script src="./js/script.js"></script>
+  </body>
 </html>

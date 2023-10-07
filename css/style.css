@@ -7,6 +7,9 @@
 html {
   scroll-behavior: smooth;
 }
+header {
+  transition: background-color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+}
 
 #name {
   font-family: "Shantell sans";
@@ -15,7 +18,7 @@ html {
 .containerIcons {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 32px;
+  column-gap: 15px;
   row-gap: 16px;
   place-content: center;
   justify-content: space-evenly;
@@ -23,8 +26,11 @@ html {
 
 .boxIconSkill {
   display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 15px;
   max-width: 80px;
-  min-width: 25px;
+  min-width: 27px;
   width: 10%;
   align-items: center;
 }
@@ -39,60 +45,67 @@ html {
   justify-content: center;
 }
 
-/*Experiences*/
+/*Experience*/
 .boxExperience {
   display: flex;
-  padding: 10px;
-}
-.textExperience {
-  text-align: center;
-  flex-basis: 60%;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.imageExperience {
-  flex-basis: 40%;
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
+  text-wrap: balance;
 }
 .titleExperience {
+  text-align: center;
   font-size: 24px;
 }
 .subtitleExperience {
+  text-align: center;
   margin-bottom: 10px;
+}
+.imageExperience {
+  display: flex;
+  justify-content: center;
+}
+.imageExperience img {
+  height: 100%;
+  width: auto;
+  max-height: 350px;
 }
 
 /*Projects*/
 .containerProjects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 500px));
+  display: flex;
+  flex-direction: column;
   gap: 30px;
   justify-content: space-evenly;
 }
 .boxProject {
+  width: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 15px;
+  border: 1px solid #f4eee0;
 }
 .titleProject {
   font-size: 24px;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
+  height: fit-content;
 }
-.imageProject {
+.boxImageProject {
   display: flex;
   justify-content: center;
   position: relative;
   height: 285px;
   z-index: 1;
+  border-radius: 15px;
+  border-bottom: 1px solid rgb(121, 112, 112);
 }
-.imageProject img {
+.boxImageProject img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  border-radius: 15px 15px 0 0;
 }
-.imageProject:hover .hoverImage {
+.boxImageProject:hover .hoverImage {
   display: flex;
   opacity: 1;
   transform: scale(1);
@@ -109,32 +122,59 @@ html {
   transition: opacity 0.3s, transform 0.3s;
   transform: scale(0);
   pointer-events: none;
+  border-radius: 15px 15px 0 0;
 }
 .textProject {
   text-align: center;
   padding: 20px;
+  height: 100%;
 }
 
-@media (max-width: 1100px) {
-  /*Experience*/
+/*sm*/
+@media (min-width: 640px) {
+  .containerIcons {
+    column-gap: 32px;
+  }
+}
+
+/*md*/
+@media (min-width: 768px) {
+  /*Experiences*/
   .boxExperience {
-    flex-direction: column;
-    padding: 0px;
+    flex-direction: row;
   }
   .textExperience {
-    padding-left: 0px;
-    padding-right: 0px;
+    flex-basis: 60%;
+    padding-left: 20px;
   }
-  /*Project*/
-  .boxProject {
-    padding: 0px;
-    flex-direction: column;
+  .imageExperience {
+    flex-basis: 40%;
+  }
+  .imageExperience img {
+    width: max-content;
+    height: min-content;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }
 
-@media (max-width: 540px) {
+/*lg*/
+@media (min-width: 1024px) {
   /*Project*/
-  .imageProject {
-    height: 240px;
+  .boxProject {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    border: 0px;
+  }
+  .boxImageProject {
+    grid-row: 1 / 3;
+  }
+  .boxImageProject img {
+    border-radius: 15px;
+    border: 1px solid #f4eee0;
+  }
+  .hoverImage {
+    border-radius: 15px;
   }
 }

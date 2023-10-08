@@ -811,16 +811,21 @@ video {
   height: 35px;
 }
 
-.h-\[40\%\] {
-  height: 40%;
-}
-
-.h-\[60\%\] {
-  height: 60%;
-}
-
 .h-full {
   height: 100%;
+}
+
+.h-min {
+  height: -moz-min-content;
+  height: min-content;
+}
+
+.max-h-\[40\%\] {
+  max-height: 40%;
+}
+
+.max-h-\[60\%\] {
+  max-height: 60%;
 }
 
 .max-h-full {
@@ -1743,6 +1748,10 @@ video {
   border-bottom-width: 1px;
 }
 
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
 .border-e {
   border-inline-end-width: 1px;
 }
@@ -1787,9 +1796,9 @@ video {
   border-style: none;
 }
 
-.border-blue-dark-2 {
+.border-light-hover {
   --tw-border-opacity: 1;
-  border-color: rgb(32 32 32 / var(--tw-border-opacity));
+  border-color: rgb(249 115 22 / var(--tw-border-opacity));
 }
 
 .border-transparent {
@@ -1801,26 +1810,27 @@ video {
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-stone-200 {
+.bg-light-primary-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 211 209 / var(--tw-bg-opacity));
+}
+
+.bg-light-primary-2 {
   --tw-bg-opacity: 1;
   background-color: rgb(231 229 228 / var(--tw-bg-opacity));
 }
 
-.bg-stone-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(214 211 209 / var(--tw-bg-opacity));
+.bg-light-primary-2\/\[0\.85\] {
+  background-color: rgb(231 229 228 / 0.85);
 }
 
 .bg-transparent {
   background-color: transparent;
 }
 
-.bg-white\/50 {
-  background-color: rgb(255 255 255 / 0.5);
-}
-
-.bg-white\/\[0\.85\] {
-  background-color: rgb(255 255 255 / 0.85);
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .decoration-slice {
@@ -1949,6 +1959,16 @@ video {
 .object-left {
   -o-object-position: left;
      object-position: left;
+}
+
+.object-top {
+  -o-object-position: top;
+     object-position: top;
+}
+
+.object-right {
+  -o-object-position: right;
+     object-position: right;
 }
 
 .px-4 {
@@ -2147,6 +2167,11 @@ video {
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2554,15 +2579,16 @@ header {
   justify-content: space-evenly;
 }
 
-.boxProject {
+.cardProject {
   width: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 15px;
   border: 1px solid #f4eee0;
+  text-wrap: balance;
 }
 
-.titleProject {
+.cardProjectTextContainerTitle {
   font-size: 24px;
   text-align: center;
   margin-top: 10px;
@@ -2571,7 +2597,15 @@ header {
   height: fit-content;
 }
 
-.boxImageProject {
+.cardProjectTextContainerIconsContainer {
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  align-items: center;
+}
+
+.cardProjectImageContainer {
   display: flex;
   justify-content: center;
   position: relative;
@@ -2581,7 +2615,7 @@ header {
   border-bottom: 1px solid rgb(121, 112, 112);
 }
 
-.boxImageProject img {
+.cardProjectImageContainer img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -2589,7 +2623,7 @@ header {
   border-radius: 15px 15px 0 0;
 }
 
-.boxImageProject:hover .hoverImage {
+.cardProjectImageContainer:hover .hoverImage {
   display: flex;
   opacity: 1;
   transform: scale(1);
@@ -2610,10 +2644,8 @@ header {
   border-radius: 15px 15px 0 0;
 }
 
-.textProject {
-  text-align: center;
+.cardProjectTextContainerDescription {
   padding: 20px;
-  height: 100%;
 }
 
 /*sm*/
@@ -2658,18 +2690,18 @@ header {
 @media (min-width: 1024px) {
   /*Project*/
 
-  .boxProject {
+  .cardProject {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
     border: 0px;
   }
 
-  .boxImageProject {
+  .cardProjectImageContainer {
     grid-row: 1 / 3;
   }
 
-  .boxImageProject img {
+  .cardProjectImageContainer img {
     border-radius: 15px;
     border: 1px solid #f4eee0;
   }
@@ -2724,12 +2756,7 @@ header {
   font-weight: 700;
 }
 
-.hover\:text-\[\#5EBFDD\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(94 191 221 / var(--tw-text-opacity));
-}
-
-.hover\:text-orange-500:hover {
+.hover\:text-light-hover:hover {
   --tw-text-opacity: 1;
   color: rgb(249 115 22 / var(--tw-text-opacity));
 }
@@ -2756,27 +2783,23 @@ header {
   text-align: center;
 }
 
-:is(.dark .dark\:border-gray-300) {
+:is(.dark .dark\:border-dark-hover) {
   --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity));
-}
-
-:is(.dark .dark\:bg-black\/50) {
-  background-color: rgb(0 0 0 / 0.5);
+  border-color: rgb(52 152 219 / var(--tw-border-opacity));
 }
 
 :is(.dark .dark\:bg-black\/\[0\.85\]) {
   background-color: rgb(0 0 0 / 0.85);
 }
 
-:is(.dark .dark\:bg-blue-dark-1) {
+:is(.dark .dark\:bg-dark-primary-1) {
   --tw-bg-opacity: 1;
-  background-color: rgb(42 42 42 / var(--tw-bg-opacity));
+  background-color: rgb(18 18 18 / var(--tw-bg-opacity));
 }
 
-:is(.dark .dark\:bg-blue-dark-2) {
+:is(.dark .dark\:bg-dark-primary-2) {
   --tw-bg-opacity: 1;
-  background-color: rgb(32 32 32 / var(--tw-bg-opacity));
+  background-color: rgb(30 30 30 / var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:bg-white) {
@@ -2794,32 +2817,19 @@ header {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-:is(.dark .dark\:hover\:bg-color-secondary-1:hover) {
+:is(.dark .dark\:hover\:bg-dark-hover:hover) {
   --tw-bg-opacity: 1;
-  background-color: rgb(109 93 110 / var(--tw-bg-opacity));
+  background-color: rgb(52 152 219 / var(--tw-bg-opacity));
 }
 
-:is(.dark .dark\:hover\:text-\[\#5EBFDD\]:hover) {
+:is(.dark .dark\:hover\:text-dark-hover:hover) {
   --tw-text-opacity: 1;
-  color: rgb(94 191 221 / var(--tw-text-opacity));
-}
-
-:is(.dark .dark\:hover\:text-color-secondary-2:hover) {
-  --tw-text-opacity: 1;
-  color: rgb(244 238 224 / var(--tw-text-opacity));
+  color: rgb(52 152 219 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
   .sm\:block {
     display: block;
-  }
-
-  .sm\:h-\[30\%\] {
-    height: 30%;
-  }
-
-  .sm\:h-\[70\%\] {
-    height: 70%;
   }
 
   .sm\:w-\[80\%\] {
@@ -2828,6 +2838,11 @@ header {
 
   .sm\:w-\[90\%\] {
     width: 90%;
+  }
+
+  .sm\:object-top {
+    -o-object-position: top;
+       object-position: top;
   }
 
   .sm\:px-0 {
@@ -2867,6 +2882,10 @@ header {
 
   .md\:h-auto {
     height: auto;
+  }
+
+  .md\:max-h-none {
+    max-height: none;
   }
 
   .md\:w-\[50\%\] {
@@ -2919,6 +2938,11 @@ header {
 
   .md\:p-0 {
     padding: 0px;
+  }
+
+  .md\:py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 
   :is(.dark .dark\:md\:border-\[0px\]) {

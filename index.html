@@ -39,7 +39,7 @@
   <body class="dark:text-white text-black">
     <!--Links navigation-->
     <header class="fixed w-full z-10 flex">
-      <nav class="flex text-lg w-full flex-wrap py-2">
+      <nav class="flex text-lg w-full flex-wrap py-2 md:py-3">
         <h2 id="name" class="flex items-center ml-4">{Manuel Sebastián}</h2>
         <button
           id="buttonMenu"
@@ -81,7 +81,7 @@
           <li class="flex justify-center py-2 md:p-0">
             <button name="buttonTheme" id="buttonDarkTheme" class="hidden">
               <img
-                src="./media/icons/moon.png"
+                src="./media/moon.webp"
                 width="20px"
                 height="20px"
                 alt="imageNotFound"
@@ -108,16 +108,16 @@
       >
         <!--Fondo negro con opacidad-->
         <div
-          class="w-full h-full flex items-center justify-center bg-white/[0.85] dark:bg-black/[0.85]"
+          class="w-full h-full flex items-center justify-center bg-light-primary-2/[0.85] dark:bg-black/[0.85]"
         >
           <!--Landing text and image-->
           <div
-            class="flex flex-col w-[80%] items-center h-full md:flex-row md:flex-nowrap"
+            class="h-full w-[80%] flex flex-col items-center justify-center md:flex-row md:flex-nowrap"
           >
             <!--Landing Image-->
             <div
               id="photo"
-              class="h-[60%] flex items-end sm:block sm:h-[70%] md:h-auto md:w-[50%]"
+              class="max-h-[60%] h-min md:max-h-none md:h-auto md:w-[50%]"
             >
               <img
                 src="./media/ilutration.webp"
@@ -128,7 +128,7 @@
             <!--Landing Text-->
             <div
               id="presentation"
-              class="h-[40%] sm:h-[30%] md:h-auto md:w-[50%] md:flex md:flex-col md:flex-wrap md:content-center"
+              class="max-h-[40%] h-min md:max-h-none md:h-auto md:w-[50%] md:flex md:flex-col md:flex-wrap md:content-center"
             >
               <h1 class="text-5xl">Manuel Sebastián</h1>
               <h2 class="mb-8 text-2xl">FullStack Developer</h2>
@@ -137,7 +137,7 @@
                   href="./media/cv.pdf"
                   aria-label="linkCV"
                   target="_blank"
-                  class="py-1 px-4 dark:hover:bg-color-secondary-1 dark:bg-white dark:text-black hover:bg-orange-500 rounded-lg font-bold h-full"
+                  class="py-1 px-4 bg-black text-white dark:hover:bg-dark-hover dark:bg-white dark:text-black hover:bg-orange-500 rounded-lg font-bold h-full"
                 >
                   CV
                 </a>
@@ -149,7 +149,7 @@
                   class="flex items-center text-[35px]"
                 >
                   <i
-                    class="fa-brands fa-github dark:hover:text-color-secondary-2 hover:text-orange-500"
+                    class="fa-brands fa-github dark:hover:text-dark-hover hover:text-light-hover"
                   ></i>
                 </a>
                 <a
@@ -159,7 +159,7 @@
                   class="flex items-center text-[35px]"
                 >
                   <i
-                    class="fa-brands fa-linkedin-in dark:hover:text-color-secondary-2 hover:text-orange-500"
+                    class="fa-brands fa-linkedin-in dark:hover:text-dark-hover hover:text-light-hover"
                   ></i>
                 </a>
                 <a
@@ -167,7 +167,7 @@
                   aria-label="linkEmail"
                   class="flex items-center text-[35px]"
                   ><i
-                    class="fa-solid fa-envelope dark:hover:text-color-secondary-2 hover:text-orange-500"
+                    class="fa-solid fa-envelope dark:hover:text-dark-hover hover:text-light-hover"
                   ></i
                 ></a>
               </div>
@@ -178,7 +178,7 @@
       <!--SKILLS-->
       <div
         id="skills"
-        class="section bg-stone-200 dark:bg-blue-dark-2 px-4 sm:px-0"
+        class="section bg-light-primary-2 dark:bg-dark-primary-2 px-4 sm:px-0"
       >
         <div class="w-full pb-10 pt-16 sm:w-[90%]">
           <h1 class="text-center mb-10 text-5xl">Habilidades</h1>
@@ -333,7 +333,7 @@
       <!--EXPERIENCE-->
       <div
         id="experience"
-        class="section bg-stone-300 dark:bg-blue-dark-1 px-4 sm:px-0"
+        class="section bg-light-primary-1 dark:bg-dark-primary-1 px-4 sm:px-0"
       >
         <div class="w-full pb-10 pt-16 sm:w-[90%] md:w-[80%]">
           <h1 class="text-center mb-10 text-5xl">Experiencia</h1>
@@ -368,50 +368,45 @@
       <!--PROJECTS-->
       <div
         id="projects"
-        class="section bg-stone-200 dark:bg-blue-dark-2 px-4 sm:px-0"
+        class="section bg-light-primary-2 dark:bg-dark-primary-2 px-4 sm:px-0"
       >
         <div class="w-full pb-10 pt-16 sm:w-[80%]">
           <h1 class="text-center mb-10 text-5xl">Proyectos</h1>
           <div class="containerProjects">
-            <div class="boxProject">
-              <div class="boxImageProject">
+            <!-- Olimpo web -->
+            <div class="cardProject">
+              <div class="cardProjectImageContainer">
                 <img
                   class="object-center"
                   src="./media/olimpo.png"
                   alt="imageOlimpoWeb"
                 />
-                <div class="hoverImage bg-white/50 dark:bg-black/50">
-                  <div>
-                    <p>Fronted</p>
-                    <a
-                      href="https://github.com/msebascp/OLIMPO-ANGULAR"
-                      aria-label="linkGithub"
-                      target="_blank"
-                      class="flex items-center text-[2em] w-full place-content-center"
-                    >
-                      <i
-                        class="fa-brands fa-square-github hover:text-[#5EBFDD] dark:hover:text-[#5EBFDD]"
-                      ></i>
-                    </a>
-                  </div>
-                  <div>
-                    <p>Backend</p>
-                    <a
-                      href="https://github.com/msebascp/OLIMPO_LARAVEL"
-                      aria-label="linkGithub"
-                      target="_blank"
-                      class="flex items-center text-[2em] w-full place-content-center"
-                    >
-                      <i
-                        class="fa-brands fa-square-github hover:text-[#5EBFDD] dark:hover:text-[#5EBFDD]"
-                      ></i>
-                    </a>
-                  </div>
-                </div>
               </div>
-              <h1 class="titleProject">Gimnasio web</h1>
-              <div class="textProject">
-                <p class="descriptionProject">
+              <div class="cardProjectTextContainer">
+                <h1 class="cardProjectTextContainerTitle">Gimnasio web</h1>
+                <div class="cardProjectTextContainerIconsContainer">
+                  <h2>Fronted:</h2>
+                  <a
+                    href="https://github.com/msebascp/OLIMPO-ANGULAR"
+                    aria-label="linkGithub"
+                    target="_blank"
+                  >
+                    <i
+                      class="text-3xl fa-brands fa-square-github hover:text-light-hover dark:hover:text-dark-hover"
+                    ></i>
+                  </a>
+                  <h2>Backend:</h2>
+                  <a
+                    href="https://github.com/msebascp/OLIMPO_LARAVEL"
+                    aria-label="linkGithub"
+                    target="_blank"
+                  >
+                    <i
+                      class="text-3xl fa-brands fa-square-github hover:text-light-hover dark:hover:text-dark-hover"
+                    ></i>
+                  </a>
+                </div>
+                <p class="cardProjectTextContainerDescription">
                   Trabajo final para el grado de DAW que realicé junto con mi
                   grupo, consiste en una página web para la gestión de un
                   gimnasio. <br />
@@ -421,42 +416,60 @@
                 </p>
               </div>
             </div>
-            <div class="boxProject">
-              <div class="boxImageProject col-start-2">
+            <!-- Bookslist -->
+            <div class="cardProject">
+              <div class="cardProjectImageContainer col-start-2">
                 <img
-                  class="object-left"
-                  src="./media/tasks.png"
-                  alt="imageTasksC++"
+                  class="object-center sm:object-top"
+                  src="./media/booksList1.png"
+                  alt="image of bookslist project with angular"
                 />
-                <div class="hoverImage bg-white/50 dark:bg-black/50">
+              </div>
+              <div class="cardProjectTextContainer">
+                <h1 class="cardProjectTextContainerTitle">Lista de libros</h1>
+                <div class="cardProjectTextContainerIconsContainer">
                   <a
-                    href="https://github.com/msebascp/TASKS_CC"
+                    href="https://github.com/msebascp/BOOKS_LIST/"
                     aria-label="linkGithub"
                     target="_blank"
-                    class="flex items-center text-[2em] w-full place-content-center"
                   >
                     <i
-                      class="fa-brands fa-square-github hover:text-[#5EBFDD] dark:hover:text-[#5EBFDD]"
+                      class="text-3xl fa-brands fa-square-github hover:text-light-hover dark:hover:text-dark-hover"
+                    ></i>
+                  </a>
+                  <a
+                    href="https://msebascp.github.io/BOOKS_LIST/"
+                    aria-label="linkGithub"
+                    target="_blank"
+                  >
+                    <i
+                      class="text-2xl fa-solid fa-arrow-up-right-from-square hover:text-light-hover dark:hover:text-dark-hover"
                     ></i>
                   </a>
                 </div>
-              </div>
-              <h1 class="titleProject">Tasks C++</h1>
-              <div class="textProject">
-                <p class="descriptionProject">
-                  Práctica de gestión de proyectos y tareas en terminal con la
-                  que aprendí lo básico de C++ y POO
+                <p class="cardProjectTextContainerDescription">
+                  Web desarrollada con Angular que muestra una selección de
+                  libros de prueba desde un archivo JSON, sin necesidad de una
+                  base de datos. Esta aplicación está diseñada como un proyecto
+                  de práctica de desarrollo frontend y cuenta con las siguientes
+                  características principales
                 </p>
               </div>
             </div>
-            <div class="boxProject">
-              <div class="boxImageProject">
+            <!-- Tasks React -->
+            <div class="cardProject">
+              <div class="cardProjectImageContainer">
                 <img
-                  class="object-center"
+                  class="object-fill sm:object-none sm:object-top"
                   src="./media/tasksReact.png"
-                  alt="imageTasksC++"
+                  alt="image of tasks project with react"
                 />
-                <div class="hoverImage bg-white/50 dark:bg-black/50">
+              </div>
+              <div class="cardProjectTextContainer">
+                <h1 class="cardProjectTextContainerTitle">
+                  Tasks y login React
+                </h1>
+                <div class="cardProjectTextContainerIconsContainer">
                   <a
                     href="https://github.com/msebascp/Tasks_and_Authentication_REACT"
                     aria-label="linkGithub"
@@ -464,14 +477,11 @@
                     class="flex items-center text-[2em] w-full place-content-center"
                   >
                     <i
-                      class="fa-brands fa-square-github hover:text-[#5EBFDD] dark:hover:text-[#5EBFDD]"
+                      class="fa-brands fa-square-github hover:text-light-hover dark:hover:text-dark-hover"
                     ></i>
                   </a>
                 </div>
-              </div>
-              <h1 class="titleProject">Tasks y login React</h1>
-              <div class="textProject">
-                <p class="descriptionProject">
+                <p class="cardProjectTextContainerDescription">
                   Práctica de gestión de tareas con autenticación. Fronted con
                   Vite y React, backend con nodejs y Express, y MongoDB para la
                   base de datos.
@@ -483,7 +493,9 @@
       </div>
     </main>
     <footer>
-      <div class="flex justify-center bg-stone-300 dark:bg-blue-dark-1">
+      <div
+        class="flex justify-center bg-light-primary-1 dark:bg-dark-primary-1"
+      >
         <div class="w-3/4 py-6">
           <div class="w-full flex justify-center gap-6">
             <!--Icons-->
@@ -494,7 +506,7 @@
               class="flex items-center text-[35px]"
             >
               <i
-                class="fa-brands fa-github dark:hover:text-color-secondary-2 hover:text-orange-500"
+                class="fa-brands fa-github dark:hover:text-dark-hover hover:text-light-hover"
               ></i>
             </a>
             <a
@@ -504,7 +516,7 @@
               class="flex items-center text-[35px]"
             >
               <i
-                class="fa-brands fa-linkedin-in dark:hover:text-color-secondary-2 hover:text-orange-500"
+                class="fa-brands fa-linkedin-in dark:hover:text-dark-hover hover:text-light-hover"
               ></i>
             </a>
             <a
@@ -512,7 +524,7 @@
               aria-label="linkEmail"
               class="flex items-center text-[35px]"
               ><i
-                class="fa-solid fa-envelope dark:hover:text-color-secondary-2 hover:text-orange-500"
+                class="fa-solid fa-envelope dark:hover:text-dark-hover hover:text-light-hover"
               ></i
             ></a>
           </div>

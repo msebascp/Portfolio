@@ -76,21 +76,28 @@ header {
   gap: 30px;
   justify-content: space-evenly;
 }
-.boxProject {
+.cardProject {
   width: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 15px;
   border: 1px solid #f4eee0;
+  text-wrap: balance;
 }
-.titleProject {
+.cardProjectTextContainerTitle {
   font-size: 24px;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
   height: fit-content;
 }
-.boxImageProject {
+.cardProjectTextContainerIconsContainer {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+  align-items: center;
+}
+.cardProjectImageContainer {
   display: flex;
   justify-content: center;
   position: relative;
@@ -99,13 +106,13 @@ header {
   border-radius: 15px;
   border-bottom: 1px solid rgb(121, 112, 112);
 }
-.boxImageProject img {
+.cardProjectImageContainer img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
 }
-.boxImageProject:hover .hoverImage {
+.cardProjectImageContainer:hover .hoverImage {
   display: flex;
   opacity: 1;
   transform: scale(1);
@@ -124,10 +131,8 @@ header {
   pointer-events: none;
   border-radius: 15px 15px 0 0;
 }
-.textProject {
-  text-align: center;
+.cardProjectTextContainerDescription {
   padding: 20px;
-  height: 100%;
 }
 
 /*sm*/
@@ -161,16 +166,16 @@ header {
 /*lg*/
 @media (min-width: 1024px) {
   /*Project*/
-  .boxProject {
+  .cardProject {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
     border: 0px;
   }
-  .boxImageProject {
+  .cardProjectImageContainer {
     grid-row: 1 / 3;
   }
-  .boxImageProject img {
+  .cardProjectImageContainer img {
     border-radius: 15px;
     border: 1px solid #f4eee0;
   }

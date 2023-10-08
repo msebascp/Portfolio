@@ -1,47 +1,14 @@
 const changeTheme = () => {
   document.documentElement.classList.toggle("dark");
+  if (
+    document.documentElement.classList.contains("dark") ||
+    !("theme" in localStorage)
+  ) {
+    localStorage.theme = "dark";
+  } else {
+    localStorage.theme = "light";
+  }
 };
-
-window.onload = () => {
-  const buttonDark = document.querySelector("#buttonDarkTheme");
-  const buttonLight = document.querySelector("#buttonLightTheme");
-  const buttonMenu = document.querySelector("#buttonMenu");
-  const navMenu = document.querySelector("#navMenu");
-  buttonLight.style.display = "block";
-  let inicio = document.querySelector("#start");
-
-  buttonDark.onclick = () => {
-    changeTheme();
-    buttonLight.style.display = "block";
-    buttonDark.style.display = "none";
-  };
-  buttonLight.onclick = () => {
-    changeTheme();
-    buttonLight.style.display = "none";
-    buttonDark.style.display = "block";
-  };
-
-  buttonMenu.onclick = () => {
-    buttonMenuOnClicked();
-  };
-
-  buttonMenu.onblur = () => {
-    buttonMenuOnBlur();
-  };
-};
-
-window.onscroll = () => {
-  changeClassHeaderOnScroll();
-};
-
-const classScroll = [
-  "dark:bg-blue-dark-2",
-  "bg-stone-300",
-  "border-b",
-  "dark:border-gray-300",
-  "border-blue-dark-2"
-];
-const classScroll0 = ["bg-transparent", "border-transparent"];
 
 const buttonMenuOnClicked = () => {
   const header = document.querySelector("header");
@@ -80,4 +47,49 @@ const changeClassHeaderOnScroll = () => {
       header.classList.add(...classScroll0);
     }
   }
+};
+
+const classScroll = [
+  "dark:bg-dark-primary-1",
+  "bg-light-primary-1",
+  "border-b-2",
+  "dark:border-dark-hover",
+  "border-light-hover"
+];
+const classScroll0 = ["bg-transparent", "border-transparent"];
+
+window.onload = () => {
+  const buttonDark = document.querySelector("#buttonDarkTheme");
+  const buttonLight = document.querySelector("#buttonLightTheme");
+  const buttonMenu = document.querySelector("#buttonMenu");
+
+  if (localStorage.theme === "dark" || !("theme" in localStorage)) {
+    document.documentElement.classList.add("dark");
+    buttonLight.classList.remove("hidden");
+  } else {
+    document.documentElement.classList.remove("dark");
+    buttonDark.classList.remove("hidden");
+  }
+  buttonDark.onclick = () => {
+    changeTheme();
+    buttonLight.style.display = "block";
+    buttonDark.style.display = "none";
+  };
+  buttonLight.onclick = () => {
+    changeTheme();
+    buttonLight.style.display = "none";
+    buttonDark.style.display = "block";
+  };
+
+  buttonMenu.onclick = () => {
+    buttonMenuOnClicked();
+  };
+
+  buttonMenu.onblur = () => {
+    buttonMenuOnBlur();
+  };
+};
+
+window.onscroll = () => {
+  changeClassHeaderOnScroll();
 };

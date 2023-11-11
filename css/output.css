@@ -1810,6 +1810,11 @@ video {
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 .bg-light-primary-1 {
   --tw-bg-opacity: 1;
   background-color: rgb(214 211 209 / var(--tw-bg-opacity));
@@ -1826,11 +1831,6 @@ video {
 
 .bg-transparent {
   background-color: transparent;
-}
-
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .decoration-slice {
@@ -1954,21 +1954,6 @@ video {
 .object-center {
   -o-object-position: center;
      object-position: center;
-}
-
-.object-left {
-  -o-object-position: left;
-     object-position: left;
-}
-
-.object-top {
-  -o-object-position: top;
-     object-position: top;
-}
-
-.object-right {
-  -o-object-position: right;
-     object-position: right;
 }
 
 .px-4 {
@@ -2609,7 +2594,7 @@ header {
   display: flex;
   justify-content: center;
   position: relative;
-  height: 285px;
+  height: auto;
   z-index: 1;
   border-radius: 15px;
   border-bottom: 1px solid rgb(121, 112, 112);
@@ -2838,6 +2823,11 @@ header {
 
   .sm\:w-\[90\%\] {
     width: 90%;
+  }
+
+  .sm\:object-none {
+    -o-object-fit: none;
+       object-fit: none;
   }
 
   .sm\:object-top {

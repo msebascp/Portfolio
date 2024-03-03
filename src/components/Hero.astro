@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+import MainImage from "../assets/images/mainImage.webp";
+import CV from "../assets/cv.pdf";
+const linkLinkedin = "https://www.linkedin.com/in/msebascp";
+const linkGithub = "https://github.com/msebascp";
+---
+
+<!--START-->
+<div
+    id="start"
+    class="h-[100vh] pt-[44px] md:pt-[52px] text-lg flex items-center justify-center bg-light-primary-1 dark:bg-dark-primary-1 px-4"
+>
+    <!--Landing text and image-->
+    <div
+        class="h-full w-full max-w-4xl flex flex-col items-center justify-center md:flex-row md:flex-nowrap"
+    >
+        <!--Landing Image-->
+        <div
+            id="photo"
+            class="max-h-[60%] h-min md:max-h-none md:h-auto md:w-[50%]"
+        >
+            <Image
+                src={MainImage}
+                alt="Landing page"
+                class="max-h-full w-auto"
+                loading="eager"
+            />
+        </div>
+        <!--Landing Text-->
+        <div
+            id="presentation"
+            class="max-h-[40%] h-min md:max-h-none md:h-auto md:w-[50%] md:flex md:flex-col md:flex-wrap md:content-center"
+        >
+            <h1 class="text-4xl dark:text-dark-hover text-black">
+                FullStack and Mobile Applications Developer
+            </h1>
+            <h2 class="mb-8 text-2xl">Manuel Sebastián</h2>
+            <div class="flex items-center gap-4 h-[35px]">
+                <a
+                    href={CV}
+                    aria-label="linkCV"
+                    target="_blank"
+                    class="py-1 px-4 bg-black text-white dark:hover:bg-dark-hover dark:bg-white dark:text-black hover:bg-orange-500 rounded-lg font-bold h-full"
+                >
+                    CV
+                </a>
+                <!--Icons-->
+                <a
+                    href={linkGithub}
+                    aria-label="linkGithub"
+                    target="_blank"
+                    class="flex items-center text-[35px]"
+                >
+                    <i
+                        class="fa-brands fa-github dark:hover:text-dark-hover hover:text-light-hover"
+                    ></i>
+                </a>
+                <a
+                    href={linkLinkedin}
+                    aria-label="linkLinkedin"
+                    target="_blank"
+                    class="flex items-center text-[35px]"
+                >
+                    <i
+                        class="fa-brands fa-linkedin-in dark:hover:text-dark-hover hover:text-light-hover"
+                    ></i>
+                </a>
+                <a
+                    href="mailto:msebascp@gmail.com"
+                    aria-label="linkEmail"
+                    class="flex items-center text-[35px]"
+                    ><i
+                        class="fa-solid fa-envelope dark:hover:text-dark-hover hover:text-light-hover"
+                    ></i></a
+                >
+            </div>
+        </div>
+    </div>
+</div>

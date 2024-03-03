@@ -1,0 +1,42 @@
+---
+const linkLinkedin = "https://www.linkedin.com/in/msebascp";
+const linkGithub = "https://github.com/msebascp";
+---
+
+<footer>
+    <div class="flex justify-center bg-light-primary-1 dark:bg-dark-primary-1">
+        <div class="w-3/4 py-6">
+            <div class="w-full flex justify-center gap-6">
+                <!--Icons-->
+                <a
+                    href={linkGithub}
+                    aria-label="linkGithub"
+                    target="_blank"
+                    class="flex items-center text-[35px]"
+                >
+                    <i
+                        class="fa-brands fa-github dark:hover:text-dark-hover hover:text-light-hover"
+                    ></i>
+                </a>
+                <a
+                    href={linkLinkedin}
+                    aria-label="link Linkedin"
+                    target="_blank"
+                    class="flex items-center text-[35px]"
+                >
+                    <i
+                        class="fa-brands fa-linkedin-in dark:hover:text-dark-hover hover:text-light-hover"
+                    ></i>
+                </a>
+                <a
+                    href="mailto:msebascp@gmail.com"
+                    aria-label="linkEmail"
+                    class="flex items-center text-[35px]"
+                    ><i
+                        class="fa-solid fa-envelope dark:hover:text-dark-hover hover:text-light-hover"
+                    ></i></a
+                >
+            </div>
+        </div>
+    </div>
+</footer>

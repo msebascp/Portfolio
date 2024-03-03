@@ -1,0 +1,202 @@
+---
+import { Image } from "astro:assets";
+import Moon from "../assets/images/moon.webp";
+import Sun from "../assets/images/sun.ico";
+---
+
+<header class="fixed w-full z-10 flex justify-center px-4">
+    <nav class="flex text-lg w-full max-w-4xl flex-wrap md:py-3 py-2">
+        <h2 id="name" class="flex items-center">
+            &lbrace;Manuel Sebastián&rbrace;
+        </h2>
+        <button id="buttonMenu" name="buttonMenu" class="md:hidden ml-auto">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul
+            id="navMenu"
+            class="hidden w-full text-center mr-0 md:items-center md:dark:bg-transparent md:bg-transparent md:relative md:w-auto md:top-auto md:flex md:gap-10 md:ml-auto md:border-[0px] md:border- dark:md:border-[0px]"
+        >
+            <li class="py-2 md:p-0">
+                <a
+                    class="block w-full"
+                    href="#start"
+                    class="navItem hover:underline"
+                    data-url="start">Inicio</a
+                >
+            </li>
+            <li class="py-2 md:p-0">
+                <a
+                    class="block w-full"
+                    href="#projects"
+                    class="navItem hover:underline"
+                    data-url="projects">Proyectos</a
+                >
+            </li>
+            <li class="py-2 md:p-0">
+                <a
+                    class="block w-full"
+                    href="#experience"
+                    class="navItem hover:underline"
+                    data-url="experience">Experiencia</a
+                >
+            </li>
+            <li class="py-2 md:p-0">
+                <a
+                    class="block w-full"
+                    href="#skills"
+                    class="navItem hover:underline"
+                    data-url="skills">Habilidades</a
+                >
+            </li>
+            <li class="flex justify-center py-2 md:p-0">
+                <button
+                    name="buttonTheme"
+                    id="buttonDarkTheme"
+                    class="hidden w-full"
+                >
+                    <Image
+                        src={Moon}
+                        width="20"
+                        height="20"
+                        alt="imageNotFound"
+                        class="mx-auto"
+                        loading="eager"
+                    />
+                </button>
+                <button
+                    name="buttonTheme"
+                    id="buttonLightTheme"
+                    class="hidden w-full"
+                >
+                    <Image
+                        src={Sun}
+                        width="20"
+                        height="20"
+                        alt="imageNotFound"
+                        class="mx-auto"
+                        loading="eager"
+                    />
+                </button>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+    window.onload = () => {
+        const buttonDark = document.querySelector(
+            "#buttonDarkTheme",
+        ) as HTMLButtonElement;
+        const buttonLight = document.querySelector(
+            "#buttonLightTheme",
+        ) as HTMLButtonElement;
+        const buttonMenu = document.querySelector(
+            "#buttonMenu",
+        ) as HTMLButtonElement;
+
+        if (localStorage.theme === "dark" || !("theme" in localStorage)) {
+            document.documentElement.classList.add("dark");
+            buttonLight.classList.remove("hidden");
+        } else {
+            document.documentElement.classList.remove("dark");
+            buttonDark.classList.remove("hidden");
+        }
+        buttonDark;
+        buttonDark.onclick = () => {
+            changeTheme();
+            buttonLight.style.display = "block";
+            buttonDark.style.display = "none";
+        };
+        buttonLight.onclick = () => {
+            changeTheme();
+            buttonLight.style.display = "none";
+            buttonDark.style.display = "block";
+        };
+
+        buttonMenu.onclick = () => {
+            buttonMenuOnClicked();
+        };
+
+        buttonMenu.onblur = () => {
+            buttonMenuOnBlur();
+        };
+    };
+
+    const changeTheme = () => {
+        document.documentElement.classList.toggle("dark");
+        if (
+            document.documentElement.classList.contains("dark") ||
+            !("theme" in localStorage)
+        ) {
+            localStorage.theme = "dark";
+        } else {
+            localStorage.theme = "light";
+        }
+    };
+
+    const classScroll = [
+        "dark:bg-dark-primary-1",
+        "bg-light-primary-1",
+        "border-b-2",
+        "dark:border-dark-hover",
+        "border-light-hover",
+    ];
+    const classScroll0 = ["bg-transparent", "border-transparent"];
+
+    const buttonMenuOnClicked = () => {
+        const header = document.querySelector("header");
+        const navMenu = document.querySelector("#navMenu");
+        navMenu.classList.toggle("hidden");
+        if (window.scrollY == 0) {
+            classScroll.forEach((c) => {
+                if (header.classList.contains(c)) {
+                    header.classList.remove(c);
+                } else {
+                    header.classList.add(c);
+                }
+            });
+        }
+    };
+
+    const buttonMenuOnBlur = () => {
+        const header = document.querySelector("header");
+        const navMenu = document.querySelector("#navMenu");
+        setTimeout(() => {
+            navMenu.classList.add("hidden");
+        }, 100);
+        if (window.scrollY == 0) {
+            header.classList.remove(...classScroll);
+        }
+    };
+
+    const changeClassHeaderOnScroll = () => {
+        const header = document.querySelector("header");
+        const navMenu = document.querySelector("#navMenu");
+        // Verificar si la página ha sido desplazada más allá del umbral
+        if (window.scrollY > 0) {
+            header.classList.add(...classScroll);
+            header.classList.remove(...classScroll0);
+        } else {
+            // Si estamos en la parte superior de la página
+            if (navMenu.classList.contains("hidden")) {
+                header.classList.remove(...classScroll);
+                header.classList.add(...classScroll0);
+            }
+        }
+    };
+
+    window.onscroll = () => {
+        changeClassHeaderOnScroll();
+    };
+</script>
+
+<style>
+    #name {
+        font-family: "Shantell sans";
+    }
+    header {
+        transition:
+            background-color 0.3s ease-in-out,
+            border-bottom 0.3s ease-in-out;
+    }
+</style>

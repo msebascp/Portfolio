@@ -1,0 +1,45 @@
+---
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Projects from "../components/Projects.astro";
+import Experience from "../components/Experience.astro";
+import Skills from "../components/Skills.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Portfolio</title>
+		<script
+			src="https://kit.fontawesome.com/f78e4f8e66.js"
+			crossorigin="anonymous"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Shantell+Sans:wght@300&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="dark:text-white text-black">
+		<Header />
+		<main>
+			<Hero />
+			<Projects />
+			<Experience />
+			<Skills />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style is:global>
+	html {
+		scroll-behavior: smooth;
+	}
+</style>

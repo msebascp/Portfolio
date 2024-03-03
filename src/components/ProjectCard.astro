@@ -1,0 +1,119 @@
+---
+import { Image } from "astro:assets";
+const { title, imageSrc } = Astro.props;
+---
+
+<div class="cardProject">
+    <div class="cardProjectTextContainer">
+        <h1 class="cardProjectTextContainerTitle">{title}</h1>
+        <div class="cardProjectTextContainerIconsContainer">
+            <slot name="icons" />
+        </div>
+        <p class="cardProjectTextContainerDescription">
+            <slot />
+        </p>
+    </div>
+    <div class="cardProjectImageContainer">
+        <Image
+            src={imageSrc}
+            alt="Olimpo"
+            class="cardProjectImage"
+            loading="eager"
+        />
+    </div>
+</div>
+
+<style>
+    .cardProject {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        border-radius: 15px;
+        border: 1px solid #f4eee0;
+        text-wrap: balance;
+    }
+    .cardProjectTextContainerTitle {
+        font-size: 24px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: fit-content;
+    }
+    .cardProjectTextContainerIconsContainer {
+        display: flex;
+        justify-content: center;
+        column-gap: 10px;
+        align-items: center;
+    }
+    .cardProjectImageContainer {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        height: auto;
+        z-index: 1;
+        border-radius: 15px;
+        border-bottom: 1px solid rgb(121, 112, 112);
+    }
+    .cardProjectImageContainer img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 15px 15px 0 0;
+    }
+    .cardProjectImageContainer:hover .hoverImage {
+        display: flex;
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: all;
+    }
+    .hoverImage {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        justify-content: space-evenly;
+        align-items: center;
+        opacity: 0;
+        transition:
+            opacity 0.3s,
+            transform 0.3s;
+        transform: scale(0);
+        pointer-events: none;
+        border-radius: 15px 15px 0 0;
+    }
+    .cardProjectTextContainerDescription {
+        padding: 10px;
+        text-wrap: pretty;
+    }
+    /*md*/
+    @media (min-width: 768px) {
+        .cardProjectTextContainerDescription {
+            padding: 20px;
+            text-wrap: pretty;
+        }
+    }
+    /*lg*/
+    @media (min-width: 1024px) {
+        /*Project*/
+        .cardProjectTextContainerTitle {
+            margin-top: 0px;
+        }
+        .cardProject {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr;
+            border: 0px;
+        }
+        .cardProjectImageContainer img {
+            border-radius: 15px;
+            border: 1px solid #f4eee0;
+            aspect-ratio: 16/9;
+        }
+        .hoverImage {
+            border-radius: 15px;
+        }
+        .cardProjectTextContainerDescription {
+            padding: 10px 20px 0px 0px;
+            text-wrap: pretty;
+        }
+    }
+</style>

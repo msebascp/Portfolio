@@ -1,0 +1,192 @@
+---
+import { Image } from "astro:assets";
+import iconHTML from "../assets/images/html.webp";
+import iconCSS from "../assets/images/css.webp";
+import iconJS from "../assets/images/js.webp";
+import iconTS from "../assets/images/ts.webp";
+import iconNode from "../assets/images/node.webp";
+import iconPHP from "../assets/images/php.webp";
+import iconTailwind from "../assets/images/tailwind.webp";
+import iconAngular from "../assets/images/angular.webp";
+import iconReact from "../assets/images/react.webp";
+import iconAdonis from "../assets/images/adonis.webp";
+import iconLaravel from "../assets/images/laravel.webp";
+import iconMySQL from "../assets/images/mysql.webp";
+import iconGit from "../assets/images/git.webp";
+import iconTrello from "../assets/images/trello.webp";
+import iconPostman from "../assets/images/postman.webp";
+---
+
+<!--SKILLS-->
+<div
+    id="skills"
+    class="section bg-light-primary-2 dark:bg-dark-primary-2 px-4 sm:px-0"
+>
+    <div class="w-full max-w-4xl pb-10 pt-16 sm:w-[90%]">
+        <h1 class="text-center mb-10 text-5xl">Habilidades</h1>
+        <h2 class="text-center text-3xl my-4">
+            Leguajes de programación y maquetación web
+        </h2>
+        <div class="containerIcons">
+            <div class="boxIconSkill">
+                <Image src={iconHTML} alt="" class="iconSkill" title="html" />
+                <p class="hidden sm:block">HTML</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image src={iconCSS} alt="" class="iconSkill" title="css" />
+                <p class="hidden sm:block">CSS</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image
+                    src={iconJS}
+                    alt=""
+                    class="iconSkill"
+                    title="javascript"
+                />
+                <p class="hidden sm:block">Javascript</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image
+                    src={iconTS}
+                    alt=""
+                    class="iconSkill"
+                    title="typescript"
+                />
+                <p class="hidden sm:block">Typescript</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image src={iconNode} alt="" class="iconSkill" title="nodejs" />
+                <p class="hidden sm:block">NodeJS</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image src={iconPHP} alt="" class="iconSkill" title="php" />
+                <p class="hidden sm:block">PHP</p>
+            </div>
+        </div>
+        <h2 class="text-center text-3xl my-4">Frameworks y librerías</h2>
+        <!--Icons-->
+        <div class="containerIcons">
+            <div class="boxIconSkill">
+                <Image
+                    src={iconTailwind}
+                    alt="Tailwind logo"
+                    class="iconSkill"
+                    title="tailwind"
+                />
+                <p class="hidden sm:block">Tailwind</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image
+                    src={iconAngular}
+                    alt="Angular logo"
+                    class="iconSkill"
+                    title="angular"
+                />
+                <p class="hidden sm:block">Angular</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image
+                    src={iconReact}
+                    alt="React logo"
+                    class="iconSkill"
+                    title="react"
+                />
+                <p class="hidden sm:block">React</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image
+                    src={iconAdonis}
+                    alt="AdonisJS logo"
+                    class="iconSkill"
+                    title="adonisjs"
+                />
+                <p class="hidden sm:block">Adonis</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image
+                    src={iconLaravel}
+                    alt="Laravel logo"
+                    class="iconSkill"
+                    title="laravel"
+                />
+                <p class="hidden sm:block">Laravel</p>
+            </div>
+        </div>
+        <h2 class="text-center text-3xl my-4">Herramientas adicionales</h2>
+        <div class="containerIcons">
+            <div class="boxIconSkill">
+                <Image
+                    src={iconMySQL}
+                    alt="MySQL logo"
+                    class="iconSkill"
+                    title="mysql"
+                />
+                <p class="hidden sm:block">MySQL</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image
+                    src={iconGit}
+                    alt="Git logo"
+                    class="iconSkill"
+                    title="git"
+                />
+                <p class="hidden sm:block">Git</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image
+                    src={iconTrello}
+                    alt="Trello logo"
+                    class="iconSkill"
+                    title="trello"
+                />
+                <p class="hidden sm:block">Trello</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image
+                    src={iconPostman}
+                    alt="Postman logo"
+                    class="iconSkill"
+                    title="postman"
+                />
+                <p class="hidden sm:block">Postman</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .containerIcons {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 15px;
+        row-gap: 16px;
+        place-content: center;
+        justify-content: space-evenly;
+    }
+    .boxIconSkill {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        gap: 15px;
+        max-width: 80px;
+        min-width: 27px;
+        width: 10%;
+        align-items: center;
+    }
+
+    .iconSkill {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .section {
+        display: flex;
+        justify-content: center;
+    }
+    /*sm*/
+    @media (min-width: 640px) {
+        .containerIcons {
+            column-gap: 32px;
+        }
+    }
+</style>

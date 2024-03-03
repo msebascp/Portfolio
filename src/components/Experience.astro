@@ -1,0 +1,30 @@
+---
+import ExperienceCard from "../components/ExperienceCard.astro";
+import imageSantoDomingo from "../assets/images/escudoSantoDomingo.webp";
+---
+
+<div
+    id="experience"
+    class="section bg-light-primary-1 dark:bg-dark-primary-1 px-4 sm:px-0"
+>
+    <div class="w-ful max-w-4xl pb-10 pt-16 sm:w-[90%] md:w-[80%]">
+        <h1 class="text-center mb-10 text-5xl">Experiencia</h1>
+        <ExperienceCard
+            title="Colegio Diocésano Santo Domingo"
+            subtitle="Marzo 2023 - Junio 2023, Orihuela-Alicante (España)"
+            imageSrc={imageSantoDomingo}
+        >
+            Durante mis prácticas, trabajé en el desarrollo de una aplicación
+            web interna centrada en la gestión de ubicaciones del centro, a
+            través de un mapa interactivo. Utilicé AdonisJS para el frontend y
+            el backend, y MySQL para la base de datos.
+        </ExperienceCard>
+    </div>
+</div>
+
+<style>
+    .section {
+        display: flex;
+        justify-content: center;
+    }
+</style>

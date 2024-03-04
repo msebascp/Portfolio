@@ -10,8 +10,8 @@ export default {
 				"dark-primary-2": "#1E1E1E",
 				"dark-hover": "#3498db",
 				// LightTheme
-				"light-primary-1": "rgb(214 211 209)",
-				"light-primary-2": "rgb(231 229 228)",
+				"light-primary-1": "#d6d3d1",
+				"light-primary-2": "#e7e5e4",
 				"light-hover": "#d15c0a"
 			}
 		},

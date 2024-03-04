@@ -101,7 +101,6 @@ import Sun from "../assets/images/sun.ico";
             document.documentElement.classList.remove("dark");
             buttonDark.classList.remove("hidden");
         }
-        buttonDark;
         buttonDark.onclick = () => {
             changeTheme();
             buttonLight.style.display = "block";
@@ -155,6 +154,9 @@ import Sun from "../assets/images/sun.ico";
                     header.classList.add(c);
                 }
             });
+            if (!navMenu.classList.contains("hidden")) {
+                header.classList.remove(...classScroll0);
+            }
         }
     };
 

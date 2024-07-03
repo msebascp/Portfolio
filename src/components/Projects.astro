@@ -1,8 +1,11 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
+import ProjectMobileCard from "./ProjectMobileCard.astro";
 import imageOlimpo from "../assets/images/olimpo.png";
-import imageBookList from "../assets/images/booksList1.png";
+import imageBookList from "../assets/images/booksList01.png";
 import imageTasksReact from "../assets/images/tasksReact.png";
+import apiBooks from "../assets/images/apiBooks.png";
+import appBooks from "../assets/images/appBooks.png";
 ---
 
 <div
@@ -15,11 +18,8 @@ import imageTasksReact from "../assets/images/tasksReact.png";
             <!-- Olimpo web -->
             <ProjectCard title="Gimnasio web" imageSrc={imageOlimpo}>
                 Trabajo final para el grado de DAW que realicé junto con mi
-                grupo, consiste en una página web para la gestión de un
-                gimnasio. <br />
-                <br />
-                Para el fronted se usó Angular, para el backend Laravel, para la
-                base de datos MySQL y para el diseño CSS y Tailwind.
+                grupo. Se trata de una aplicación web full stack para la gestión
+                de un gimnasio.
                 <Fragment slot="icons">
                     <h2>Fronted:</h2>
                     <a
@@ -87,6 +87,37 @@ import imageTasksReact from "../assets/images/tasksReact.png";
                     </a>
                 </Fragment>
             </ProjectCard>
+            <ProjectCard title="Api Books" imageSrc={apiBooks}>
+                Api de libros desarrolada con Laravel y MySQL.
+                <Fragment slot="icons">
+                    <a
+                        href="https://github.com/msebascp/Api_books"
+                        aria-label="linkGithub"
+                        target="_blank"
+                        class="flex items-center text-[2em] w-full place-content-center"
+                    >
+                        <i
+                            class="fa-brands fa-square-github hover:text-light-hover dark:hover:text-dark-hover"
+                        ></i>
+                    </a>
+                </Fragment>
+            </ProjectCard>
+            <ProjectMobileCard title="App de libros" imageSrc={appBooks}>
+                App de libros desarrolada con Kotlin, Jetpack Compose y Android
+                Studio. Inspirada en la aplicación letterboxd pero para libros.
+                <Fragment slot="icons">
+                    <a
+                        href="https://github.com/msebascp/Books_app"
+                        aria-label="linkGithub"
+                        target="_blank"
+                        class="flex items-center text-[2em] w-full place-content-center"
+                    >
+                        <i
+                            class="fa-brands fa-square-github hover:text-light-hover dark:hover:text-dark-hover"
+                        ></i>
+                    </a>
+                </Fragment>
+            </ProjectMobileCard>
         </div>
     </div>
 </div>

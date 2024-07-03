@@ -51,12 +51,10 @@ const { title, imageSrc } = Astro.props;
         position: relative;
         height: auto;
         z-index: 1;
-        border-radius: 15px;
-        border-bottom: 1px solid rgb(121, 112, 112);
     }
     .cardProjectImageContainer img {
         width: 100%;
-        object-fit: cover;
+        object-fit: contain;
         border-radius: 15px 15px 0 0;
     }
     .cardProjectTextContainerDescription {
@@ -83,9 +81,7 @@ const { title, imageSrc } = Astro.props;
             border: 0px;
         }
         .cardProjectImageContainer img {
-            border-radius: 15px;
-            border: 1px solid #f4eee0;
-            aspect-ratio: 16/9;
+            width: 60%;
         }
         .cardProjectTextContainerDescription {
             padding: 10px 20px 0px 0px;

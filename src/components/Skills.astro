@@ -15,6 +15,9 @@ import iconMySQL from "../assets/images/mysql.webp";
 import iconGit from "../assets/images/git.webp";
 import iconTrello from "../assets/images/trello.webp";
 import iconPostman from "../assets/images/postman.webp";
+import iconJava from "../assets/images/java.webp";
+import iconKotlin from "../assets/images/kotlin.png";
+import iconJetpackCompose from "../assets/images/jetpackcompose.webp";
 ---
 
 <!--SKILLS-->
@@ -61,6 +64,24 @@ import iconPostman from "../assets/images/postman.webp";
             <div class="boxIconSkill">
                 <Image src={iconPHP} alt="" class="iconSkill" title="php" />
                 <p class="hidden sm:block">PHP</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image
+                    src={iconJava}
+                    alt="Icon Java"
+                    class="iconSkill"
+                    title="java"
+                />
+                <p class="hidden sm:block">Java</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image
+                    src={iconKotlin}
+                    alt=""
+                    class="iconSkill"
+                    title="kotlin"
+                />
+                <p class="hidden sm:block">Kotlin</p>
             </div>
         </div>
         <h2 class="text-center text-3xl my-4">Frameworks y librerías</h2>
@@ -110,6 +131,15 @@ import iconPostman from "../assets/images/postman.webp";
                     title="laravel"
                 />
                 <p class="hidden sm:block">Laravel</p>
+            </div>
+            <div class="boxIconSkill">
+                <Image
+                    src={iconJetpackCompose}
+                    alt="Jetpack Compose logo"
+                    class="iconSkill"
+                    title="jetpack-compose"
+                />
+                <p class="hidden sm:block">Jetpack</p>
             </div>
         </div>
         <h2 class="text-center text-3xl my-4">Herramientas adicionales</h2>
@@ -166,7 +196,7 @@ import iconPostman from "../assets/images/postman.webp";
     .boxIconSkill {
         display: flex;
         flex-direction: column;
-        justify-content: end;
+        justify-content: flex-end;
         gap: 15px;
         max-width: 80px;
         min-width: 27px;

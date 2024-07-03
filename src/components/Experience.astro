@@ -1,6 +1,7 @@
 ---
 import ExperienceCard from "../components/ExperienceCard.astro";
 import imageSantoDomingo from "../assets/images/escudoSantoDomingo.webp";
+import logoTransnaba from "../assets/images/logoTransnaba.jpg";
 ---
 
 <div
@@ -9,16 +10,28 @@ import imageSantoDomingo from "../assets/images/escudoSantoDomingo.webp";
 >
     <div class="w-ful max-w-4xl pb-10 pt-16 sm:w-[90%] md:w-[80%]">
         <h1 class="text-center mb-10 text-5xl">Experiencia</h1>
-        <ExperienceCard
-            title="Colegio Diocésano Santo Domingo"
-            subtitle="Marzo 2023 - Junio 2023, Orihuela-Alicante (España)"
-            imageSrc={imageSantoDomingo}
-        >
-            Durante mis prácticas, trabajé en el desarrollo de una aplicación
-            web interna centrada en la gestión de ubicaciones del centro, a
-            través de un mapa interactivo. Utilicé AdonisJS para el frontend y
-            el backend, y MySQL para la base de datos.
-        </ExperienceCard>
+        <div class="containerExperiences">
+            <ExperienceCard
+                title="Transnaba Orihuela S.L."
+                subtitle="Marzo 2024 - Junio 2024, Redován-Alicante (España)"
+                imageSrc={logoTransnaba}
+            >
+                Durante mis prácticas, estuve en el departamento de informática
+                trabajando en servidores y en los equipos informáticos de las
+                oficinas. Trabajé en la implementación de Active Directory, y un
+                servidor de archivos entre otros.
+            </ExperienceCard>
+            <ExperienceCard
+                title="Colegio Diocésano Santo Domingo"
+                subtitle="Marzo 2023 - Junio 2023, Orihuela-Alicante (España)"
+                imageSrc={imageSantoDomingo}
+            >
+                Durante mis prácticas, trabajé en el desarrollo de una
+                aplicación web interna centrada en la gestión de ubicaciones del
+                centro, a través de un mapa interactivo. Utilicé AdonisJS para
+                el frontend y el backend, y MySQL para la base de datos.
+            </ExperienceCard>
+        </div>
     </div>
 </div>
 
@@ -26,5 +39,11 @@ import imageSantoDomingo from "../assets/images/escudoSantoDomingo.webp";
     .section {
         display: flex;
         justify-content: center;
+    }
+    .containerExperiences {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        justify-content: space-evenly;
     }
 </style>
